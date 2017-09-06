@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196C1F60608C00825117 /* UIFont+Helper.swift */; };
+		EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196E1F60618200825117 /* UIColor+Helper.swift */; };
 		EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA1C196C1F60608C00825117 /* UIFont+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Helper.swift"; sourceTree = "<group>"; };
+		EA1C196E1F60618200825117 /* UIColor+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		EA6A4A191F5F24A500CFC322 /* SberTech_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberTech_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6A4A281F5F24A500CFC322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +31,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA1C19691F60602800825117 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EA1C196E1F60618200825117 /* UIColor+Helper.swift */,
+				EA1C196C1F60608C00825117 /* UIFont+Helper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		EA6A4A101F5F24A500CFC322 = {
 			isa = PBXGroup;
 			children = (
@@ -48,6 +61,7 @@
 			children = (
 				EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */,
 				EA6A4A311F5F29B600CFC322 /* Entities.swift */,
+				EA1C19691F60602800825117 /* Helpers */,
 				EA6A4A301F5F26DA00CFC322 /* Resources */,
 			);
 			path = SberTech_test;
@@ -131,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */,
+				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
 				EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
