@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainController" customModule="SberTech_test" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="WXt-f7-g1B" id="eSg-iW-eP1"/>
+                <outlet property="tableView" destination="gkG-bY-qDm" id="sY8-yK-rlD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="LqG-lF-4sf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkG-bY-qDm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="WMD-X4-4tM"/>
+                    </constraints>
+                </tableView>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WXt-f7-g1B">
+                    <rect key="frame" x="320" y="0.0" width="704" height="768"/>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="WXt-f7-g1B" secondAttribute="bottom" id="11U-6V-BNm"/>
+                <constraint firstItem="WXt-f7-g1B" firstAttribute="leading" secondItem="gkG-bY-qDm" secondAttribute="trailing" id="4zY-W8-rIS"/>
+                <constraint firstItem="gkG-bY-qDm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8RN-n8-HrX"/>
+                <constraint firstAttribute="trailing" secondItem="WXt-f7-g1B" secondAttribute="trailing" id="FcQ-AX-H3D"/>
+                <constraint firstItem="gkG-bY-qDm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LzN-oO-yib"/>
+                <constraint firstItem="WXt-f7-g1B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PB1-72-Ack"/>
+                <constraint firstAttribute="bottom" secondItem="gkG-bY-qDm" secondAttribute="bottom" id="sO7-w8-z9L"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

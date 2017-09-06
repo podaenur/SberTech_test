@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EA1C195B1F605A5300825117 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1C195A1F605A5300825117 /* MapKit.framework */; };
+		EA1C195E1F605B3900825117 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1C195D1F605B3900825117 /* MainController.xib */; };
+		EA1C19601F605B4400825117 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C195F1F605B4400825117 /* MainController.swift */; };
 		EA1C19671F605DCC00825117 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C19651F605DCC00825117 /* MainViewCell.swift */; };
 		EA1C19681F605DCC00825117 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1C19661F605DCC00825117 /* MainViewCell.xib */; };
 		EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196C1F60608C00825117 /* UIFont+Helper.swift */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		EA1C195A1F605A5300825117 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EA1C195D1F605B3900825117 /* MainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
+		EA1C195F1F605B4400825117 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		EA1C19651F605DCC00825117 /* MainViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		EA1C19661F605DCC00825117 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 		EA1C196C1F60608C00825117 /* UIFont+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Helper.swift"; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		EA1C195C1F605B0900825117 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EA1C195F1F605B4400825117 /* MainController.swift */,
+				EA1C195D1F605B3900825117 /* MainController.xib */,
 				EA369CB91F608095007492DA /* Views */,
 			);
 			name = UI;
@@ -173,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1C195E1F605B3900825117 /* MainController.xib in Resources */,
 				EA1C19681F605DCC00825117 /* MainViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1C19671F605DCC00825117 /* MainViewCell.swift in Sources */,
+				EA1C19601F605B4400825117 /* MainController.swift in Sources */,
 				EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */,
 				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
 				EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */,
