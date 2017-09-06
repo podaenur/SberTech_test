@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA1C19671F605DCC00825117 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C19651F605DCC00825117 /* MainViewCell.swift */; };
+		EA1C19681F605DCC00825117 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1C19661F605DCC00825117 /* MainViewCell.xib */; };
 		EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196C1F60608C00825117 /* UIFont+Helper.swift */; };
 		EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196E1F60618200825117 /* UIColor+Helper.swift */; };
 		EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA1C19651F605DCC00825117 /* MainViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
+		EA1C19661F605DCC00825117 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 		EA1C196C1F60608C00825117 /* UIFont+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Helper.swift"; sourceTree = "<group>"; };
 		EA1C196E1F60618200825117 /* UIColor+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		EA6A4A191F5F24A500CFC322 /* SberTech_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberTech_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +35,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA1C195C1F605B0900825117 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EA369CB91F608095007492DA /* Views */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		EA1C19691F60602800825117 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -38,6 +50,15 @@
 				EA1C196C1F60608C00825117 /* UIFont+Helper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		EA369CB91F608095007492DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA1C19651F605DCC00825117 /* MainViewCell.swift */,
+				EA1C19661F605DCC00825117 /* MainViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		EA6A4A101F5F24A500CFC322 = {
@@ -63,6 +84,7 @@
 				EA6A4A311F5F29B600CFC322 /* Entities.swift */,
 				EA1C19691F60602800825117 /* Helpers */,
 				EA6A4A301F5F26DA00CFC322 /* Resources */,
+				EA1C195C1F605B0900825117 /* UI */,
 			);
 			path = SberTech_test;
 			sourceTree = "<group>";
@@ -135,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1C19681F605DCC00825117 /* MainViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1C19671F605DCC00825117 /* MainViewCell.swift in Sources */,
 				EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */,
 				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
 				EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */,
