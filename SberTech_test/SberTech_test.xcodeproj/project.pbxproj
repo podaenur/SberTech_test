@@ -17,6 +17,7 @@
 		EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */; };
 		EAEAC8FB1F606C8C00695669 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEAC8FA1F606C8C00695669 /* MainPresenter.swift */; };
 		EAEAC8FD1F606CA800695669 /* MainViewEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEAC8FC1F606CA800695669 /* MainViewEntities.swift */; };
+		EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A311F5F29B600CFC322 /* Entities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EA6A4A281F5F24A500CFC322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAEAC8FA1F606C8C00695669 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		EAEAC8FC1F606CA800695669 /* MainViewEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewEntities.swift; sourceTree = "<group>"; };
+		EA6A4A311F5F29B600CFC322 /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				EA1C19691F60602800825117 /* Helpers */,
 				EA6A4A301F5F26DA00CFC322 /* Resources */,
 				EA1C195C1F605B0900825117 /* UI */,
+                EA6A4A311F5F29B600CFC322 /* Entities.swift */,
 			);
 			path = SberTech_test;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				EA1C19601F605B4400825117 /* MainController.swift in Sources */,
 				EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */,
 				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
+				EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */,
 				EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
