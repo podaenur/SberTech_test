@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 fileprivate struct Const {
-    static let cellIdent = "MainViewCell"
+    static let cellNibName = "MainViewCell"
     static let estimateRowHeight: CGFloat = 50
     static let contentInsets = UIEdgeInsetsMake(20, 0, 0, 0)
 }
@@ -37,8 +37,8 @@ class MainController: UIViewController {
     }
     
     private func setup(_ tableView: UITableView) {
-        let nib = UINib(nibName: "MainViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: Const.cellIdent)
+        let nib = UINib(nibName: Const.cellNibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: Const.cellNibName)
         
         tableView.estimatedRowHeight = Const.estimateRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -63,7 +63,7 @@ extension MainController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellIdent, for: indexPath) as! MainViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellNibName, for: indexPath) as! MainViewCell
 //        cell.configure(with: <#T##MainViewCellModel#>)
         return cell
     }
