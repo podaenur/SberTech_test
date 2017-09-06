@@ -22,7 +22,21 @@ class MainController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
+    // MARK: - Properties
+    
+    private var presenter: MainViewOutput?
+    
     // MARK: - Life cycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        initialSetup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialSetup()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +45,10 @@ class MainController: UIViewController {
     }
     
     // MARK: - Private
+    
+    private func initialSetup() {
+        presenter = MainPresenter(with: self) as MainViewOutput
+    }
     
     private func setupUI() {
         setup(tableView)
@@ -42,13 +60,13 @@ class MainController: UIViewController {
         
         tableView.estimatedRowHeight = Const.estimateRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.contentInset = Const.contentInsets
         
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.backgroundColor = .sb_backgroundTable
         tableView.separatorStyle = .none
-        tableView.contentInset = Const.contentInsets
     }
     
     private func setup(_ mapView: MKMapView) {
@@ -75,4 +93,8 @@ extension MainController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         //
     }
+}
+
+extension MainController: MainViewInput {
+    
 }
