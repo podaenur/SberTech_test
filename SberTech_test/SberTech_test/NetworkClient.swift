@@ -8,24 +8,6 @@
 
 import Foundation
 
-enum NetworkResponse {
-    case success(Data?)
-    case failure(Error)
-}
-
-enum FetchType: String {
-    case organisations = "getOrganizationListTest"
-    case visits = "getVisitsListTest"
-    
-    //TODO: проработать ошибки
-    /*
-     case organisations = "getOrganizationListTest_1"
-     case visits = "getVisitsListTest_1"
-     */
-}
-
-typealias FetchCompletion = (NetworkResponse) -> Void
-
 class NetworkClient {
     
     // MARK: - Properties
