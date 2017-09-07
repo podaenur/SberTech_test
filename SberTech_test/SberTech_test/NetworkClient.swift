@@ -23,16 +23,9 @@ class NetworkClient {
         self.session = URLSession(configuration: .default)
     }
     
-    // MARK: - Public
-    
-    func fetch(_ type: FetchType, completion: @escaping FetchCompletion) {
-        let request = URLRequest(url: baseURL.appendingPathComponent(type.rawValue))
-        execute(request: request, completion: completion)
-    }
-    
     // MARK: - Private
     
-    private func execute(request: URLRequest, completion: @escaping FetchCompletion) {
+    fileprivate func execute(request: URLRequest, completion: @escaping FetchCompletion) {
         networkQueue.async {
             let task = self.session.dataTask(with: request, completionHandler: {
                 (data, _, error) in
@@ -44,5 +37,12 @@ class NetworkClient {
             })
             task.resume()
         }
+    }
+}
+
+extension NetworkClient: NetworkManagement {
+    func fetch(_ type: FetchType, completion: @escaping FetchCompletion) {
+        let request = URLRequest(url: baseURL.appendingPathComponent(type.rawValue))
+        execute(request: request, completion: completion)
     }
 }
