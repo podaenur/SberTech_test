@@ -9,25 +9,37 @@
 import Foundation
 
 struct VisitModel {
-    /*
-     "title":"Встреча в компании",
-     "organizationId":"100"
-     */
-    
     let identifier: Int
     let title: String
+    
+    init?(json: [String: Any]) {
+        guard let t = json["title"] as? String,
+            let i = json["organizationId"] as? Int else {
+                return nil
+        }
+        
+        self.identifier = i
+        self.title = t
+    }
 }
 
 struct OrganizationModel {
-    /*
-     "organizationId":"100",
-     "title":"Сбербанк-Технологии",
-     "latitude":55.696494,
-     "longitude":37.625472
-     */
-    
-//    let identifier: Int
+    let identifier: Int
     let title: String
     let latitude: Double
     let longitude: Double
+    
+    init?(json: [String: Any]) {
+        guard let i = json["organizationId"] as? Int,
+            let t = json["title"] as? String,
+            let la = json["latitude"] as? Double,
+            let lo = json["longitude"] as? Double else {
+                return nil
+        }
+        
+        self.identifier = i
+        self.title = t
+        self.latitude = la
+        self.longitude = lo
+    }
 }
