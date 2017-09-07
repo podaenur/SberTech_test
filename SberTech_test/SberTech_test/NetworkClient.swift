@@ -14,8 +14,14 @@ enum NetworkResponse {
 }
 
 enum FetchType: String {
-    case organisations = "getOrganizationListTest_1"
-    case visits = "getVisitsListTest_1"
+    case organisations = "getOrganizationListTest"
+    case visits = "getVisitsListTest"
+    
+    //TODO: проработать ошибки
+    /*
+     case organisations = "getOrganizationListTest_1"
+     case visits = "getVisitsListTest_1"
+     */
 }
 
 typealias FetchCompletion = (NetworkResponse) -> Void
