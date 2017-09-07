@@ -23,6 +23,7 @@
 		EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */; };
 		EA6A4A2F1F5F26CA00CFC322 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */; };
 		EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A311F5F29B600CFC322 /* Entities.swift */; };
+		EAAB9ADD1F61DEE800B40FA6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */; };
 		EAEF92021F61E3DA00F8BC9E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */; };
 		EAEF92031F61E3DA00F8BC9E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */; };
 		EAEF92051F61E45900F8BC9E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92041F61E45900F8BC9E /* ViewModel.swift */; };
@@ -47,6 +48,7 @@
 		EA6A4A281F5F24A500CFC322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EA6A4A311F5F29B600CFC322 /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EAEF92041F61E45900F8BC9E /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				EA1C195F1F605B4400825117 /* MainController.swift */,
 				EA1C195D1F605B3900825117 /* MainController.xib */,
+				EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */,
 				EA369CB91F608095007492DA /* Views */,
 			);
 			name = UI;
@@ -266,6 +269,7 @@
 				EAEF92021F61E3DA00F8BC9E /* BaseViewController.swift in Sources */,
 				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
 				EA3B14101F6186BA00194876 /* OrganizationModelConverter.swift in Sources */,
+				EAAB9ADD1F61DEE800B40FA6 /* MainViewModel.swift in Sources */,
 				EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */,
 				EA3B140E1F616F1600194876 /* NetworkEntities.swift in Sources */,
 				EA475F221F61493D00514A14 /* NSError+Helper.swift in Sources */,
