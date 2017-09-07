@@ -12,6 +12,10 @@ protocol JSONInitializable {
     init?(json: [String: Any])
 }
 
+protocol Parsable {
+    func parseArray<T: JSONInitializable>(_ data: Data) throws -> [T]
+}
+
 struct VisitModel: JSONInitializable {
     
     private struct Keys {
