@@ -77,9 +77,9 @@
 		EA1C19691F60602800825117 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EA475F211F61493D00514A14 /* NSError+Helper.swift */,
 				EA1C196E1F60618200825117 /* UIColor+Helper.swift */,
 				EA1C196C1F60608C00825117 /* UIFont+Helper.swift */,
-				EA475F211F61493D00514A14 /* NSError+Helper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -110,6 +110,14 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		EA3D17171F61699E009EFEE2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		EA6A4A101F5F24A500CFC322 = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +138,7 @@
 		EA6A4A1B1F5F24A500CFC322 /* SberTech_test */ = {
 			isa = PBXGroup;
 			children = (
-				EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */,
+				EA3D17171F61699E009EFEE2 /* App */,
 				EA369CBB1F6120A7007492DA /* Data */,
 				EA1C19691F60602800825117 /* Helpers */,
 				EA369CBA1F61206B007492DA /* Network */,
