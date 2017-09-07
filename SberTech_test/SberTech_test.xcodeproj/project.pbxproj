@@ -23,6 +23,9 @@
 		EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */; };
 		EA6A4A2F1F5F26CA00CFC322 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */; };
 		EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A311F5F29B600CFC322 /* Entities.swift */; };
+		EAEF92021F61E3DA00F8BC9E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */; };
+		EAEF92031F61E3DA00F8BC9E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */; };
+		EAEF92051F61E45900F8BC9E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92041F61E45900F8BC9E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		EA6A4A281F5F24A500CFC322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EA6A4A311F5F29B600CFC322 /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		EAEF92041F61E45900F8BC9E /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				EA3D17171F61699E009EFEE2 /* App */,
+				EAEF91FF1F61E3C900F8BC9E /* Base */,
 				EA369CBB1F6120A7007492DA /* Data */,
 				EA1C19691F60602800825117 /* Helpers */,
 				EA369CBA1F61206B007492DA /* Network */,
@@ -160,6 +167,16 @@
 				EA6A4A281F5F24A500CFC322 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EAEF91FF1F61E3C900F8BC9E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */,
+				EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */,
+				EAEF92041F61E45900F8BC9E /* ViewModel.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +261,9 @@
 				EA369CBD1F6120BD007492DA /* Parser.swift in Sources */,
 				EA1C19601F605B4400825117 /* MainController.swift in Sources */,
 				EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */,
+				EAEF92031F61E3DA00F8BC9E /* BaseViewModel.swift in Sources */,
+				EAEF92051F61E45900F8BC9E /* ViewModel.swift in Sources */,
+				EAEF92021F61E3DA00F8BC9E /* BaseViewController.swift in Sources */,
 				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
 				EA3B14101F6186BA00194876 /* OrganizationModelConverter.swift in Sources */,
 				EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */,
