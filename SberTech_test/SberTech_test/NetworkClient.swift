@@ -30,8 +30,8 @@ class NetworkClient {
     
     // MARK: - Properties
     
-    private let networkQueue = DispatchQueue(label: "com.e-legion.NetworkClient.queue")
-    private let baseURL: URL
+    private let networkQueue = DispatchQueue(label: "\(Bundle.sb_identifier).NetworkClient.queue")
+    fileprivate let baseURL: URL
     private let session: URLSession
     
     // MARK: - Life cycle

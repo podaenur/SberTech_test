@@ -24,13 +24,9 @@ extension NSError {
         }
     }
     
-    convenience init(codedDomain: Domains, userInfo dict: [AnyHashable: Any?]? = nil) {
-        let bundleIdentifier = Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as! String
-        
-        let subDomain = codedDomain.type.subDomain
+    convenience init(codedDomain: Domains, userInfo dict: [AnyHashable: Any]? = nil) {
         let code = codedDomain.type.errorCode
-        
-        let domain = "\(bundleIdentifier).\(subDomain)"
+        let domain = "\(Bundle.sb_identifier).\(codedDomain.type.subDomain)"
         self.init(domain: domain, code: code, userInfo: dict)
     }
 }
