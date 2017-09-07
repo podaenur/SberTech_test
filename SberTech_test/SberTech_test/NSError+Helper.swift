@@ -15,11 +15,13 @@ extension NSError {
     enum Domains {
         case app
         case parser
+        case network
         
         var type: DomainType {
             switch self {
             case .app:      return (subDomain: "Application", errorCode: 10_000)
             case .parser:   return (subDomain: "Parser", errorCode: 10_100)
+            case .network:  return (subDomain: "Network", errorCode: 10_200)
             }
         }
     }
