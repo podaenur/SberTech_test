@@ -18,6 +18,7 @@
 		EA3B140E1F616F1600194876 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B140D1F616F1600194876 /* NetworkEntities.swift */; };
 		EA3B14101F6186BA00194876 /* OrganizationModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B140F1F6186BA00194876 /* OrganizationModelConverter.swift */; };
 		EA3B14121F61905A00194876 /* Bundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B14111F61905A00194876 /* Bundle+Helper.swift */; };
+		EA3D17191F616DD1009EFEE2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3D17181F616DD1009EFEE2 /* DataManager.swift */; };
 		EA475F221F61493D00514A14 /* NSError+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA475F211F61493D00514A14 /* NSError+Helper.swift */; };
 		EA6A4A1D1F5F24A500CFC322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */; };
 		EA6A4A2F1F5F26CA00CFC322 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */; };
@@ -38,6 +39,7 @@
 		EA3B140D1F616F1600194876 /* NetworkEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		EA3B140F1F6186BA00194876 /* OrganizationModelConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationModelConverter.swift; sourceTree = "<group>"; };
 		EA3B14111F61905A00194876 /* Bundle+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helper.swift"; sourceTree = "<group>"; };
+		EA3D17181F616DD1009EFEE2 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EA475F211F61493D00514A14 /* NSError+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Helper.swift"; sourceTree = "<group>"; };
 		EA6A4A191F5F24A500CFC322 /* SberTech_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberTech_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		EA369CBB1F6120A7007492DA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EA3D17181F616DD1009EFEE2 /* DataManager.swift */,
 				EA3B140F1F6186BA00194876 /* OrganizationModelConverter.swift */,
 				EA6A4A311F5F29B600CFC322 /* Entities.swift */,
 				EA369CBC1F6120BD007492DA /* Parser.swift */,
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1C19671F605DCC00825117 /* MainViewCell.swift in Sources */,
+				EA3D17191F616DD1009EFEE2 /* DataManager.swift in Sources */,
 				EAEAC8FB1F606C8C00695669 /* MainPresenter.swift in Sources */,
 				EA369CBD1F6120BD007492DA /* Parser.swift in Sources */,
 				EAEAC8FD1F606CA800695669 /* MainViewEntities.swift in Sources */,
