@@ -15,7 +15,11 @@ fileprivate struct Const {
     static let contentInsets = UIEdgeInsetsMake(20, 0, 0, 0)
 }
 
-class MainController: UIViewController {
+/*
+ Protocol conformance cann't be extension for generic classes.
+ https://bugs.swift.org/browse/SR-4173
+*/
+class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Outlets
     
@@ -24,17 +28,13 @@ class MainController: UIViewController {
     
     // MARK: - Life cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupUI() {
+        super.setupUI()
         
-        setupUI()
+        setup(tableView)
     }
     
     // MARK: - Private
-    
-    private func setupUI() {
-        setup(tableView)
-    }
     
     private func setup(_ tableView: UITableView) {
         let nib = UINib(nibName: Const.cellNibName, bundle: nil)
@@ -54,9 +54,8 @@ class MainController: UIViewController {
     private func setup(_ mapView: MKMapView) {
         //
     }
-}
-
-extension MainController: UITableViewDataSource {
+    
+    // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -67,9 +66,8 @@ extension MainController: UITableViewDataSource {
 //        cell.configure(with: <#T##MainViewCellModel#>)
         return cell
     }
-}
-
-extension MainController: UITableViewDelegate {
+    
+    // MARK: - UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
