@@ -9,17 +9,17 @@
 import UIKit
 import MapKit
 
-fileprivate struct Const {
-    static let cellNibName = "MainViewCell"
-    static let estimateRowHeight: CGFloat = 50
-    static let contentInsets = UIEdgeInsetsMake(20, 0, 0, 0)
-}
-
 /*
  Protocol conformance cann't be extension for generic classes.
  https://bugs.swift.org/browse/SR-4173
-*/
+ */
 class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, UITableViewDelegate {
+    
+    private struct Const {
+        static let cellNibName = "MainViewCell"
+        static let estimateRowHeight: CGFloat = 50
+        static let contentInsets = UIEdgeInsetsMake(20, 0, 0, 0)
+    }
     
     // MARK: - Outlets
     
@@ -63,7 +63,7 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellNibName, for: indexPath) as! MainViewCell
-//        cell.configure(with: <#T##MainViewCellModel#>)
+        //        cell.configure(with: <#T##MainViewCellModel#>)
         return cell
     }
     
