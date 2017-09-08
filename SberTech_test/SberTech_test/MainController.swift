@@ -37,9 +37,13 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     override func bindUIWithViewModel() {
         super.bindUIWithViewModel()
         
-        viewModel.dataDidLoad = {
+        viewModel.organizationsDidLoad = {
             [weak self] in
-            
+            self?.updateMap()
+        }
+        
+        viewModel.visitsDidLoad = {
+            [weak self] in
             self?.tableView.reloadData()
         }
     }

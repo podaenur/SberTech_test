@@ -19,7 +19,8 @@ class MainViewModel: BaseViewModel {
     var numberOfRows: Int {
         return visitModels.count
     }
-    var dataDidLoad: (() -> Void)?
+    var organizationsDidLoad: (() -> Void)?
+    var visitsDidLoad: (() -> Void)?
     
     // MARK: - Life cycle
     
@@ -48,6 +49,7 @@ class MainViewModel: BaseViewModel {
             case .success(let models):
                 DispatchQueue.main.async {
                     sSelf.organizationModels = models
+                    sSelf.organizationsDidLoad?()
                 }
                 sSelf.loadVisits()
                 
@@ -66,7 +68,7 @@ class MainViewModel: BaseViewModel {
             case .success(let models):
                 DispatchQueue.main.async {
                     sSelf.visitModels = models
-                    sSelf.dataDidLoad?()
+                    sSelf.visitsDidLoad?()
                 }
                 
             case .failure(let error):
