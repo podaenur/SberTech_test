@@ -11,12 +11,6 @@ import Foundation
 enum FetchType: String {
     case organisations = "getOrganizationListTest"
     case visits = "getVisitsListTest"
-    
-    //TODO: проработать ошибки
-    /*
-     case organisations = "getOrganizationListTest_1"
-     case visits = "getVisitsListTest_1"
-     */
 }
 
 typealias FetchCompletion = (Response<Data?, Error>) -> Void
