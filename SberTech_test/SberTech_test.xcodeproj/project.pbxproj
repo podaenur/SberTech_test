@@ -15,6 +15,8 @@
 		EA1C196D1F60608C00825117 /* UIFont+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196C1F60608C00825117 /* UIFont+Helper.swift */; };
 		EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C196E1F60618200825117 /* UIColor+Helper.swift */; };
 		EA369CBD1F6120BD007492DA /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA369CBC1F6120BD007492DA /* Parser.swift */; };
+		EA3838071F627EEC00056C2C /* App.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3838061F627EEC00056C2C /* App.xcassets */; };
+		EA3838091F62800000056C2C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3838081F62800000056C2C /* Launch Screen.storyboard */; };
 		EA3B140E1F616F1600194876 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B140D1F616F1600194876 /* NetworkEntities.swift */; };
 		EA3B14101F6186BA00194876 /* OrganizationModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B140F1F6186BA00194876 /* OrganizationModelConverter.swift */; };
 		EA3B14121F61905A00194876 /* Bundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B14111F61905A00194876 /* Bundle+Helper.swift */; };
@@ -39,6 +41,8 @@
 		EA1C196C1F60608C00825117 /* UIFont+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Helper.swift"; sourceTree = "<group>"; };
 		EA1C196E1F60618200825117 /* UIColor+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		EA369CBC1F6120BD007492DA /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		EA3838061F627EEC00056C2C /* App.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = App.xcassets; sourceTree = "<group>"; };
+		EA3838081F62800000056C2C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EA3B140D1F616F1600194876 /* NetworkEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		EA3B140F1F6186BA00194876 /* OrganizationModelConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationModelConverter.swift; sourceTree = "<group>"; };
 		EA3B14111F61905A00194876 /* Bundle+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helper.swift"; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		EA1C195C1F605B0900825117 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EA3838081F62800000056C2C /* Launch Screen.storyboard */,
 				EA1C195F1F605B4400825117 /* MainController.swift */,
 				EA1C195D1F605B3900825117 /* MainController.xib */,
 				EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */,
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6A4A281F5F24A500CFC322 /* Info.plist */,
+				EA3838061F627EEC00056C2C /* App.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			files = (
 				EA1C195E1F605B3900825117 /* MainController.xib in Resources */,
 				EA1C19681F605DCC00825117 /* MainViewCell.xib in Resources */,
+				EA3838091F62800000056C2C /* Launch Screen.storyboard in Resources */,
+				EA3838071F627EEC00056C2C /* App.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +400,7 @@
 		EA6A4A2C1F5F24A500CFC322 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UGFFRZX2C8;
 				INFOPLIST_FILE = SberTech_test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -405,6 +414,7 @@
 		EA6A4A2D1F5F24A500CFC322 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UGFFRZX2C8;
 				INFOPLIST_FILE = SberTech_test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
