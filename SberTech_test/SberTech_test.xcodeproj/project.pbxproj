@@ -26,6 +26,7 @@
 		EA6A4A2F1F5F26CA00CFC322 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */; };
 		EA6A4A321F5F29B600CFC322 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A4A311F5F29B600CFC322 /* Entities.swift */; };
 		EAA6B9461F629A0C007D2024 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B9451F629A0C007D2024 /* Annotation.swift */; };
+		EAA6B9481F62A748007D2024 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B9471F62A748007D2024 /* PinView.swift */; };
 		EAAB9ADD1F61DEE800B40FA6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */; };
 		EAEF92021F61E3DA00F8BC9E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */; };
 		EAEF92031F61E3DA00F8BC9E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */; };
@@ -55,6 +56,7 @@
 		EA6A4A2E1F5F26CA00CFC322 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EA6A4A311F5F29B600CFC322 /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		EAA6B9451F629A0C007D2024 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		EAA6B9471F62A748007D2024 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
 		EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EAEF92001F61E3DA00F8BC9E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EAEF92011F61E3DA00F8BC9E /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				EAA6B9451F629A0C007D2024 /* Annotation.swift */,
 				EA1C19651F605DCC00825117 /* MainViewCell.swift */,
 				EA1C19661F605DCC00825117 /* MainViewCell.xib */,
+				EAA6B9471F62A748007D2024 /* PinView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				EAEF92051F61E45900F8BC9E /* ViewModel.swift in Sources */,
 				EAEF92021F61E3DA00F8BC9E /* BaseViewController.swift in Sources */,
 				EAA6B9461F629A0C007D2024 /* Annotation.swift in Sources */,
+				EAA6B9481F62A748007D2024 /* PinView.swift in Sources */,
 				EA1C196F1F60618200825117 /* UIColor+Helper.swift in Sources */,
 				EA3B14101F6186BA00194876 /* OrganizationModelConverter.swift in Sources */,
 				EAAB9ADD1F61DEE800B40FA6 /* MainViewModel.swift in Sources */,
