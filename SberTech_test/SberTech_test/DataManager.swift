@@ -10,6 +10,8 @@ import Foundation
 
 class DataManager {
     
+    typealias DataTransform<T, U> = (T) -> U
+    
     private struct Consts {
         static let kBaseURL = "APP_BASE_URL"
     }
@@ -40,10 +42,23 @@ class DataManager {
     // MARK: - Public
     
     func getOrganizations(completion: @escaping (Response<OrganizationModelPairs, Error>) -> Void) {
+        getData(fetchType: .organisations, completion: completion) { return OrganizationModelConverter().convert($0) }
+    }
+    
+    func getVisits(completion: @escaping (Response<[VisitModel], Error>) -> Void) {
+        getData(fetchType: .visits, completion: completion) { return $0 }
+    }
+    
+    // MARK: - Private
+    
+    private func getData<R, I: JSONInitializable>(fetchType: FetchType,
+                         completion: @escaping (Response<R, Error>) -> Void,
+                         transform: @escaping DataTransform<[I], R>) {
+        
         dataManagementQueue.addOperation {
             [unowned self] in
             
-            self.networkClient.fetch(.organisations) {
+            self.networkClient.fetch(fetchType) {
                 [unowned self] (response) in
                 
                 switch response {
@@ -54,37 +69,8 @@ class DataManager {
                     }
                     
                     do {
-                        let models: [OrganizationModel] = try self.parser.parseArray(_data)
-                        let converter = OrganizationModelConverter()
-                        completion(.success(converter.convert(models)))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                    
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
-        }
-    }
-    
-    func getVisits(completion: @escaping (Response<[VisitModel], Error>) -> Void) {
-        dataManagementQueue.addOperation {
-            [unowned self] in
-            
-            self.networkClient.fetch(.visits) {
-                (response) in
-                
-                switch response {
-                case .success(let data):
-                    guard let _data = data else {
-                        completion(.failure(self.noDataReceivedError))
-                        return
-                    }
-                    
-                    do {
-                        let models: [VisitModel] = try self.parser.parseArray(_data)
-                        completion(.success(models))
+                        let models: [I] = try self.parser.parseArray(_data)
+                        completion(.success(transform(models)))
                     } catch {
                         completion(.failure(error))
                     }
