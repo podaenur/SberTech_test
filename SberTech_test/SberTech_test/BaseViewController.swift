@@ -40,7 +40,13 @@ class BaseViewController<ViewModelType: ViewModel>: UIViewController {
         viewModel.didBindUIWithViewModel()
     }
     
-    func bindUIWithViewModel() {}
+    func bindUIWithViewModel() {
+        viewModel.showError = {
+            [weak self] in
+            
+            self?.showAlertError($0)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -60,5 +66,14 @@ class BaseViewController<ViewModelType: ViewModel>: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewModel.viewDidDisappear(animated)
+    }
+    
+    // MARK: - Private
+    
+    private func showAlertError(_ error: Error) {
+        let controller = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Close", style: .default)
+        controller.addAction(action)
+        present(controller, animated: true)
     }
 }

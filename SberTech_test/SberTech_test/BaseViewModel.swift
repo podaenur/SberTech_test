@@ -10,6 +10,7 @@ import UIKit
 
 class BaseViewModel: ViewModel {
     
+    var showError: ((Error) -> Void)?
     let context: Any?
     
     // MARK: - Initialization

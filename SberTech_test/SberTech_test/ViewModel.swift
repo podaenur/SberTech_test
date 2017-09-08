@@ -9,7 +9,11 @@
 import UIKit
 
 protocol ViewModel {
+    
     var context: Any? { get }
+    
+    var showError: ((Error) -> Void)? { get set }
+    
     init(context: Any?)
     
     func initialSetup()
