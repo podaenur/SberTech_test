@@ -83,7 +83,6 @@
 		EA1C195C1F605B0900825117 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				EA3838081F62800000056C2C /* Launch Screen.storyboard */,
 				EA1C195F1F605B4400825117 /* MainController.swift */,
 				EA1C195D1F605B3900825117 /* MainController.xib */,
 				EAAB9ADC1F61DEE800B40FA6 /* MainViewModel.swift */,
@@ -136,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6A4A1C1F5F24A500CFC322 /* AppDelegate.swift */,
+				EA3838081F62800000056C2C /* Launch Screen.storyboard */,
 			);
 			name = App;
 			sourceTree = "<group>";
