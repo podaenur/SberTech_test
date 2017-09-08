@@ -29,6 +29,12 @@ class MainViewCell: UITableViewCell {
         initialSetup()
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        canvasView.backgroundColor = selected ? .sb_green : .sb_white
+    }
+    
     // MARK: - Public
     
     func configure(with model: MainViewCellModel) {
@@ -45,7 +51,6 @@ class MainViewCell: UITableViewCell {
         contentView.backgroundColor = nil
         
         //  canvasView
-        canvasView.backgroundColor = .sb_white
         let layer = canvasView.layer
         layer.borderWidth = 1
         layer.borderColor = UIColor.sb_border.cgColor
