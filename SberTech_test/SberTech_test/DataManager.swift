@@ -39,7 +39,7 @@ class DataManager {
     
     // MARK: - Public
     
-    func getOrganizations(completion: @escaping (Response<[OrganizationModelPair], Error>) -> Void) {
+    func getOrganizations(completion: @escaping (Response<OrganizationModelPairs, Error>) -> Void) {
         dataManagementQueue.addOperation {
             [unowned self] in
             

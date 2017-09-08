@@ -10,7 +10,9 @@ import Foundation
 
 struct OrganizationModelConverter {
     
-    func convert(_ source: [OrganizationModel]) -> [OrganizationModelPair] {
-        return source.map({ return [$0.identifier: $0] })
+    func convert(_ source: [OrganizationModel]) -> OrganizationModelPairs {
+        var buffer = OrganizationModelPairs()
+        source.forEach { buffer[$0.identifier] = $0 }
+        return buffer
     }
 }

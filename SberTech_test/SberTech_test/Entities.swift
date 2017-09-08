@@ -9,7 +9,7 @@
 import Foundation
 
 typealias Identifier = Int
-typealias OrganizationModelPair = [Identifier: OrganizationModel]
+typealias OrganizationModelPairs = [Identifier: OrganizationModel]
 
 protocol JSONInitializable {
     init?(json: [String: Any])
