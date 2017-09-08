@@ -10,6 +10,10 @@ import UIKit.UIColor
 
 extension UIColor {
     
+    static var sb_red: UIColor {
+        return .red
+    }
+    
     static var sb_green: UIColor {
         return .green
     }
