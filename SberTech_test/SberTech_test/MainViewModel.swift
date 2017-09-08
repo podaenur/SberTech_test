@@ -6,7 +6,7 @@
 //  Copyright © 2017 Evgeniy Akhmerov. All rights reserved.
 //
 
-import Foundation
+import MapKit
 
 class MainViewModel: BaseViewModel {
     
@@ -18,6 +18,12 @@ class MainViewModel: BaseViewModel {
     
     var numberOfRows: Int {
         return visitModels.count
+    }
+    var annotations: [MKAnnotation] {
+        return organizationModels.values.map { return Annotation(latitude: $0.latitude,
+                                                                 longitude: $0.longitude,
+                                                                 identifier: $0.identifier,
+                                                                 title: $0.title) }
     }
     var organizationsDidLoad: (() -> Void)?
     var visitsDidLoad: (() -> Void)?
@@ -36,6 +42,22 @@ class MainViewModel: BaseViewModel {
         let visit = visitModels[indexPath.row]
         let organization = organizationModels[visit.identifier]
         return MainViewCellModel(title: visit.title, detail: organization?.title)
+    }
+    
+    func didSelectCell(at index: Int) {
+        //
+    }
+    
+    func didDeselectCell(at index: Int) {
+        //
+    }
+    
+    func didSelectPin(withID identifier: Int) {
+        //
+    }
+    
+    func didDeselectPin(withID identifier: Int) {
+        //
     }
     
     // MARK: - Private

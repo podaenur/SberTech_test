@@ -71,6 +71,16 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     private func setup(_ mapView: MKMapView) {
         mapView.delegate = self
     }
+    
+    private func updateMap() {
+        if mapView.annotations.count > 0 {
+            mapView.removeAnnotations(mapView.annotations)
+        }
+        
+        let annotations = viewModel.annotations
+        mapView.addAnnotations(annotations)
+        
+        mapView.showAnnotations(annotations, animated: true)
     }
     
     // MARK: - UITableViewDataSource
@@ -88,6 +98,30 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     // MARK: - UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        viewModel.didSelectCell(at: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        viewModel.didDeselectCell(at: indexPath.row)
+    }
+    
+    // MARK: - MKMapViewDelegate
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pin = PinView(annotation: annotation, reuseIdentifier: Const.pinReuseIdentifier)
+        pin.pinTintColor = .sb_red
+        return pin
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation as? Annotation else { fatalError() }
+        
+        viewModel.didSelectPin(withID: annotation.identifier)
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let annotation = view.annotation as? Annotation else { fatalError() }
+        
+        viewModel.didDeselectPin(withID: annotation.identifier)
     }
 }
