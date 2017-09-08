@@ -34,6 +34,16 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
         setup(tableView)
     }
     
+    override func bindUIWithViewModel() {
+        super.bindUIWithViewModel()
+        
+        viewModel.dataDidLoad = {
+            [weak self] in
+            
+            self?.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Private
     
     private func setup(_ tableView: UITableView) {
@@ -49,6 +59,7 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
         
         tableView.backgroundColor = .sb_backgroundTable
         tableView.separatorStyle = .none
+        tableView.allowsMultipleSelection = true
     }
     
     private func setup(_ mapView: MKMapView) {
@@ -58,12 +69,12 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellNibName, for: indexPath) as! MainViewCell
-        //        cell.configure(with: <#T##MainViewCellModel#>)
+        cell.configure(with: viewModel.cellModel(at: indexPath))
         return cell
     }
     
