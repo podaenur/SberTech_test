@@ -13,12 +13,13 @@ import MapKit
  Protocol conformance cann't be extension for generic classes.
  https://bugs.swift.org/browse/SR-4173
  */
-class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, UITableViewDelegate {
+class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
     private struct Const {
         static let cellNibName = "MainViewCell"
         static let estimateRowHeight: CGFloat = 50
         static let contentInsets = UIEdgeInsetsMake(20, 0, 0, 0)
+        static let pinReuseIdentifier = "PinView"
     }
     
     // MARK: - Outlets
@@ -32,6 +33,7 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
         super.setupUI()
         
         setup(tableView)
+        setup(mapView)
     }
     
     override func bindUIWithViewModel() {
@@ -67,7 +69,8 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     }
     
     private func setup(_ mapView: MKMapView) {
-        //
+        mapView.delegate = self
+    }
     }
     
     // MARK: - UITableViewDataSource
