@@ -46,12 +46,12 @@ class MainViewModel: BaseViewModel {
         return MainViewCellModel(title: visit.title, detail: organization?.title)
     }
     
-    func didSelectCell(at index: Int) {
         //
+    func didSelectCell(at indexPath: IndexPath) {
     }
     
-    func didDeselectCell(at index: Int) {
         //
+    func didDeselectCell(at indexPath: IndexPath) {
     }
     
     func didSelectPin(withID identifier: Int) {

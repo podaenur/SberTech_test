@@ -132,11 +132,11 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     // MARK: - UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectCell(at: indexPath.row)
+        viewModel.didSelectCell(at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        viewModel.didDeselectCell(at: indexPath.row)
+        viewModel.didDeselectCell(at: indexPath)
     }
     
     // MARK: - MKMapViewDelegate
