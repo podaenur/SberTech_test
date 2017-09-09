@@ -65,43 +65,48 @@ class MainViewModel: BaseViewModel {
     private func loadAllData() {
         dataManager.getOrganizations {
             [weak self] (response) in
+            assert(!Thread.isMainThread)
             guard let sSelf = self else { return }
             
-            switch response {
-            case .success(let models):
+            sSelf.handle(response, onSuccess: {
+                [weak self] (models) in
+                guard let sSelf = self else { return }
+                
                 DispatchQueue.main.async {
                     sSelf.organizationModels = models
                     sSelf.organizationsDidLoad?()
                 }
-                sSelf.loadVisits()
                 
-            case .failure(let error):
-                sSelf.handle(error)
-            }
+                sSelf.loadVisits()
+            })
         }
     }
     
     private func loadVisits() {
         dataManager.getVisits {
             [weak self] (response) in
-            guard let sSelf = self else { return }
+            assert(!Thread.isMainThread)
             
-            switch response {
-            case .success(let models):
+            self?.handle(response, onSuccess: {
+                [weak self] (models) in
+                guard let sSelf = self else { return }
+                
                 DispatchQueue.main.async {
                     sSelf.visitModels = models
                     sSelf.visitsDidLoad?()
                 }
-                
-            case .failure(let error):
-                sSelf.handle(error)
-            }
+            })
         }
     }
     
-    private func handle(_ error: Error) {
-        DispatchQueue.main.async {
-            self.showError?(error)
+    private func handle<T>(_ response: Response<T>, onSuccess: (T) -> Void) {
+        switch response {
+        case .success(let models):
+            onSuccess(models)
+        case .failure(let error):
+            DispatchQueue.main.async {
+                self.showError?(error)
+            }
         }
     }
 }
