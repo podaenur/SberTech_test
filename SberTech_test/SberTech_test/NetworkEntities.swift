@@ -13,7 +13,7 @@ enum FetchType: String {
     case visits = "getVisitsListTest"
 }
 
-typealias FetchCompletion = (Response<Data?, Error>) -> Void
+typealias FetchCompletion = (Response<Data?>) -> Void
 
 protocol NetworkManagement {
     func fetch(_ type: FetchType, completion: @escaping FetchCompletion)

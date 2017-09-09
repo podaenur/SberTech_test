@@ -41,18 +41,18 @@ class DataManager {
     
     // MARK: - Public
     
-    func getOrganizations(completion: @escaping (Response<OrganizationModelPairs, Error>) -> Void) {
+    func getOrganizations(completion: @escaping (Response<OrganizationModelPairs>) -> Void) {
         getData(fetchType: .organisations, completion: completion) { return OrganizationModelConverter().convert($0) }
     }
     
-    func getVisits(completion: @escaping (Response<[VisitModel], Error>) -> Void) {
+    func getVisits(completion: @escaping (Response<[VisitModel]>) -> Void) {
         getData(fetchType: .visits, completion: completion) { return $0 }
     }
     
     // MARK: - Private
     
     private func getData<R, I: JSONInitializable>(fetchType: FetchType,
-                         completion: @escaping (Response<R, Error>) -> Void,
+                         completion: @escaping (Response<R>) -> Void,
                          transform: @escaping DataTransform<[I], R>) {
         
         dataManagementQueue.addOperation {

@@ -19,9 +19,9 @@ protocol Parsable {
     func parseArray<T: JSONInitializable>(_ data: Data) throws -> [T]
 }
 
-enum Response<ResponseType, ErrorType> {
+enum Response<ResponseType> {
     case success(ResponseType)
-    case failure(ErrorType)
+    case failure(Error)
 }
 
 struct VisitModel: JSONInitializable {
