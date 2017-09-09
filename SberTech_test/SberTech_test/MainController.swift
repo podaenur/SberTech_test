@@ -41,12 +41,46 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
         
         viewModel.organizationsDidLoad = {
             [weak self] in
+            assert(Thread.isMainThread)
+            
             self?.updateMap()
         }
         
         viewModel.visitsDidLoad = {
             [weak self] in
+            assert(Thread.isMainThread)
+            
             self?.tableView.reloadData()
+        }
+        
+        viewModel.didUpdateCellSelection = {
+            [weak self] (isSelected, indexPath) in
+            assert(Thread.isMainThread)
+            guard let sSelf = self else { return }
+            
+            if isSelected {
+                sSelf.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            } else {
+                sSelf.tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+        
+        viewModel.didUpdatePinSelection = {
+            [weak self] (isSelected, identifier) in
+            assert(Thread.isMainThread)
+            guard let sSelf = self else { return }
+            
+            let map = sSelf.mapView!
+            guard let annotations = map.annotations as? [Annotation] else { fatalError() }
+            
+            let filtered = annotations.first(where: { return $0.identifier == identifier })
+            guard let _filtered = filtered else { fatalError() }
+            
+            if isSelected {
+                map.selectAnnotation(_filtered, animated: true)
+            } else {
+                map.deselectAnnotation(_filtered, animated: true)
+            }
         }
     }
     

@@ -27,6 +27,8 @@ class MainViewModel: BaseViewModel {
     }
     var organizationsDidLoad: (() -> Void)?
     var visitsDidLoad: (() -> Void)?
+    var didUpdateCellSelection: ((Bool, IndexPath) -> Void)?
+    var didUpdatePinSelection: ((Bool, Int) -> Void)?
     
     // MARK: - Life cycle
     
