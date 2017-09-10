@@ -54,29 +54,26 @@ class MainViewModel: BaseViewModel {
             [weak self] in
             guard let sSelf = self else { return }
             
-            if sSelf.selectedCells != nil {
-                guard let _selectedPin = sSelf.selectedPin else { fatalError() }
-                let visit = sSelf.visitModels[indexPath.row]
+            let selectedVisitID = sSelf.visitModels[indexPath.row].identifier
+            guard let selectedOrganizationID = sSelf.organizationModels[selectedVisitID]?.identifier else { fatalError() }
+            
+            if let oldSelectedCells = sSelf.selectedCells {
+                guard let oldSelectedPin = sSelf.selectedPin else { fatalError() }
                 
-                if visit.identifier == _selectedPin {
-                    sSelf.selectedCells?.insert(indexPath)
-                } else {
-                    guard let indices = sSelf.selectedCells else { fatalError() }
-                    indices.forEach({ sSelf.didUpdateCellSelection?(false, $0) })
-                    sSelf.didUpdatePinSelection?(false, _selectedPin)
-                    sSelf.selectedCells = Set([indexPath])
-                    
-                    guard let toSelectIndex = sSelf.organizationModels[visit.identifier]?.identifier else { fatalError() }
-                    sSelf.didUpdatePinSelection?(true, toSelectIndex)
-                    sSelf.selectedPin = toSelectIndex
+                if oldSelectedPin != selectedOrganizationID {
+                    sSelf.selectedPin = selectedOrganizationID
+                    sSelf.didUpdatePinSelection?(false, oldSelectedPin)
+                    sSelf.didUpdatePinSelection?(true, selectedOrganizationID)
                 }
-            } else {
+
+                oldSelectedCells.forEach({ sSelf.didUpdateCellSelection?(false, $0) })
                 sSelf.selectedCells = Set([indexPath])
+            } else {
                 guard sSelf.selectedPin == nil else { fatalError() }
-                let selectedVitis = sSelf.visitModels[indexPath.row]
+                sSelf.selectedPin = selectedOrganizationID
+                sSelf.didUpdatePinSelection?(true, selectedOrganizationID)
                 
-                sSelf.selectedPin = selectedVitis.identifier
-                sSelf.didUpdatePinSelection?(true, selectedVitis.identifier)
+                sSelf.selectedCells = Set([indexPath])
             }
         }
     }
