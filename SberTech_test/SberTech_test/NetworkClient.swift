@@ -20,7 +20,7 @@ class NetworkClient: NetworkManagement {
     
     init(baseURL: URL) {
         self.baseURL = baseURL
-        self.session = URLSession(configuration: .default)
+        self.session = URLSession.shared
     }
     
     // MARK: - Private
