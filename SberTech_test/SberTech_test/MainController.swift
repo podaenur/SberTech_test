@@ -15,7 +15,6 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
         static let cellNibName = "MainViewCell"
         static let estimateRowHeight: CGFloat = 50
         static let contentInsets = UIEdgeInsetsMake(20, 0, 0, 0)
-        static let pinReuseIdentifier = "PinView"
     }
     
     // MARK: - Outlets
@@ -138,7 +137,7 @@ class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, 
     // MARK: - MKMapViewDelegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let pin = PinView(annotation: annotation, reuseIdentifier: Const.pinReuseIdentifier)
+        let pin = PinView(annotation: annotation, reuseIdentifier: nil)
         pin.pinTintColor = .sb_red
         return pin
     }
