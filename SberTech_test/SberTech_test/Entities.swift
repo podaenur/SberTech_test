@@ -16,7 +16,7 @@ protocol JSONInitializable {
 }
 
 protocol Parsable {
-    func parseArray<T: JSONInitializable>(_ data: Data) throws -> [T]
+    func parseArray<ResultType: JSONInitializable>(_ data: Data) throws -> [ResultType]
 }
 
 enum Response<ResponseType> {
@@ -39,8 +39,7 @@ struct VisitModel: JSONInitializable {
             let t = json[Keys.title] as? String,
             let i = json[Keys.identifier] as? String,
             let _i = Int(i)
-            else { return nil
-        }
+            else { return nil }
         
         self.identifier = _i
         self.title = t
@@ -68,8 +67,7 @@ struct OrganizationModel: JSONInitializable {
             let t = json[Keys.title] as? String,
             let la = json[Keys.latitude] as? Double,
             let lo = json[Keys.longitude] as? Double
-            else { return nil
-        }
+            else { return nil }
         
         self.identifier = _i
         self.title = t

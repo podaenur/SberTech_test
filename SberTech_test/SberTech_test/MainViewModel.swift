@@ -165,7 +165,7 @@ class MainViewModel: BaseViewModel {
         }
     }
     
-    private func handle<T>(_ response: Response<T>, onSuccess: (T) -> Void) {
+    private func handle<ResponseType>(_ response: Response<ResponseType>, onSuccess: (ResponseType) -> Void) {
         switch response {
         case .success(let models):
             onSuccess(models)

@@ -19,10 +19,10 @@ struct Parser: Parsable {
     
     // MARK: - Parsable
     
-    func parseArray<T: JSONInitializable>(_ data: Data) throws -> [T] {
+    func parseArray<ResultType: JSONInitializable>(_ data: Data) throws -> [ResultType] {
         let json = try JSONSerialization.jsonObject(with: data) as! Array<[String: Any]>
-        let mapped: [T] = try json.map({
-            guard let model = T(json: $0) else { throw dataTypeError }
+        let mapped: [ResultType] = try json.map({
+            guard let model = ResultType(json: $0) else { throw dataTypeError }
             return model
         })
         return mapped

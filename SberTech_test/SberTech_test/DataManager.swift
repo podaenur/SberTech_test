@@ -51,9 +51,9 @@ class DataManager {
     
     // MARK: - Private
     
-    private func getData<R, I: JSONInitializable>(fetchType: FetchType,
-                         completion: @escaping (Response<R>) -> Void,
-                         transform: @escaping DataTransform<[I], R>) {
+    private func getData<ResultType, IncomeType: JSONInitializable>(fetchType: FetchType,
+                         completion: @escaping (Response<ResultType>) -> Void,
+                         transform: @escaping DataTransform<[IncomeType], ResultType>) {
         
         dataManagementQueue.addOperation {
             [unowned self] in
@@ -69,7 +69,7 @@ class DataManager {
                     }
                     
                     do {
-                        let models: [I] = try self.parser.parseArray(_data)
+                        let models: [IncomeType] = try self.parser.parseArray(_data)
                         completion(.success(transform(models)))
                     } catch {
                         completion(.failure(error))
