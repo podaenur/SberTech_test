@@ -8,17 +8,16 @@
 
 import Foundation
 
-struct Parser {
+struct Parser: Parsable {
     
     // MARK: - Properties
     
-    fileprivate var dataTypeError: Error = {
+    private var dataTypeError: Error = {
         let userInfo: [AnyHashable: Any] = [NSLocalizedDescriptionKey: "Parser reached wrong data type in JSON." as Any]
         return NSError(codedDomain: NSError.Domains.parser, userInfo: userInfo) as Error
     }()
-}
-
-extension Parser: Parsable {
+    
+    // MARK: - Parsable
     
     func parseArray<T: JSONInitializable>(_ data: Data) throws -> [T] {
         let json = try JSONSerialization.jsonObject(with: data) as! Array<[String: Any]>

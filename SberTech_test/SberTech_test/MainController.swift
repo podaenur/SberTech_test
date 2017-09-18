@@ -9,10 +9,6 @@
 import UIKit
 import MapKit
 
-/*
- Protocol conformance cann't be extension for generic classes.
- https://bugs.swift.org/browse/SR-4173
- */
 class MainController: BaseViewController<MainViewModel>, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
     private struct Const {

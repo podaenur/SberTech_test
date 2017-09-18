@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkClient {
+class NetworkClient: NetworkManagement {
     
     // MARK: - Properties
     
@@ -25,7 +25,7 @@ class NetworkClient {
     
     // MARK: - Private
     
-    fileprivate func execute(request: URLRequest, completion: @escaping FetchCompletion) {
+    private func execute(request: URLRequest, completion: @escaping FetchCompletion) {
         networkQueue.async {
             let task = self.session.dataTask(with: request, completionHandler: {
                 (data, _, error) in
@@ -38,9 +38,9 @@ class NetworkClient {
             task.resume()
         }
     }
-}
-
-extension NetworkClient: NetworkManagement {
+    
+    // MARK: - NetworkManagement
+    
     func fetch(_ type: FetchType, completion: @escaping FetchCompletion) {
         let request = URLRequest(url: baseURL.appendingPathComponent(type.rawValue))
         execute(request: request, completion: completion)
