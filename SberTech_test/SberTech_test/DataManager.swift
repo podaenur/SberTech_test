@@ -19,7 +19,7 @@ class DataManager {
     // MARK: - Properties
     
     private var noDataReceivedError: Error {
-        let userInfo:[AnyHashable: Any] = [NSLocalizedDescriptionKey: "No any data received." as Any]
+        let userInfo:[AnyHashable: Any] = [NSLocalizedDescriptionKey: "No any data received."]
         return NSError(codedDomain: NSError.Domains.network, userInfo: userInfo)
     }
     private let dataManagementQueue: OperationQueue
